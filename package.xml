@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>homework_turret</name>
+  <version>1.0.0</version>
+
+  <description>This package contains a model of MK108 mounted gun</description>
+  <author email="1budsmoker@gmail.com">Erg Noor</author>
+
+  <maintainer email="1budsmoker1@gmail.com">Erg Noor</maintainer>
+
+  <license>
+  /*
+   * ----------------------------------------------------------------------------
+   * "THE BEER-WARE LICENSE" (Revision 42):
+   * 1budsmoker1@gmail.com wrote this file.  As long as you retain this notice you
+   * can do whatever you want with this stuff. If we meet some day, and you think
+   * this stuff is worth it, you can buy me a beer in return.            Erg Noor
+   * ----------------------------------------------------------------------------
+   */
+  </license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roslaunch</build_depend>
+  <exec_depend>joint_state_publisher</exec_depend>
+  <exec_depend>robot_state_publisher</exec_depend>
+  <exec_depend>rviz</exec_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+</package>

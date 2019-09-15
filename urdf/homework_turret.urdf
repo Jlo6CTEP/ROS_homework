@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="homework_turret">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0235556603782011 -0.149192759000051 0.0209323196154078"
+        rpy="0 0 0" />
+      <mass
+        value="0.0183804556639265" />
+      <inertia
+        ixx="6.61928756294867E-06"
+        ixy="5.05520985501951E-38"
+        ixz="5.1935164386059E-24"
+        iyy="6.61928756294867E-06"
+        iyz="3.76329676540964E-22"
+        izz="1.31888786015205E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://homework_turret/meshes/base.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://homework_turret/meshes/base.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="stand">
+    <inertial>
+      <origin
+        xyz="0 -0.0285409939256112 3.46944695195361E-18"
+        rpy="0 0 0" />
+      <mass
+        value="0.120931000101119" />
+      <inertia
+        ixx="7.60339406115185E-05"
+        ixy="-3.98581041703673E-22"
+        ixz="-1.61558713389264E-24"
+        iyy="3.66889839306589E-05"
+        iyz="-5.88844571367851E-21"
+        izz="7.60075213593919E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://homework_turret/meshes/stand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://homework_turret/meshes/stand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pivot1"
+    type="continuous">
+    <origin
+      xyz="0.023555660378201 -0.149192759000051 0.023220138640931"
+      rpy="-1.5707963267949 0 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="stand" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="cannon">
+    <inertial>
+      <origin
+        xyz="7.02381392824886E-05 0.0203249639799919 0.0049912527708604"
+        rpy="0 0 0" />
+      <mass
+        value="0.0983547411490395" />
+      <inertia
+        ixx="0.000226108912346351"
+        ixy="3.93220701379915E-23"
+        ixz="-1.68087849455718E-21"
+        iyy="0.000230581616590587"
+        iyz="-3.67964676953377E-06"
+        izz="1.34544448887652E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://homework_turret/meshes/cannon.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://homework_turret/meshes/cannon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pivot2"
+    type="revolute">
+    <origin
+      xyz="0 -0.0937906941134555 0"
+      rpy="3.14 0 0" />
+    <parent
+      link="stand" />
+    <child
+      link="cannon" />
+    <axis
+      xyz="1 0 0" />
+      <limit effort="1000.0" lower ="-1.0" upper="1.0" velocity="0.5"/>
+  </joint>
+  <link
+    name="lid">
+    <inertial>
+      <origin
+        xyz="-5.95237214350182E-05 0.000377267545745991 -0.0299654862160547"
+        rpy="0 0 0" />
+      <mass
+        value="0.00729190737719222" />
+      <inertia
+        ixx="1.76524326068048E-06"
+        ixy="8.04703346698251E-23"
+        ixz="1.17719396495774E-22"
+        iyy="2.05381446217804E-06"
+        iyz="-8.24675258036372E-09"
+        izz="3.30192162482788E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://homework_turret/meshes/lid.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://homework_turret/meshes/lid.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="pivot3"
+    type="revolute">
+    <origin
+      xyz="0 0.0362294079198885 0.0346903366854567"
+      rpy="0.384112470194369 0 0" />
+    <parent
+      link="cannon" />
+    <child
+      link="lid" />
+    <axis
+      xyz="1 0 0" />
+    <limit effort="1000.0" lower ="-0.4" upper="0.0" velocity="0.5"/>
+  </joint>
+</robot>
